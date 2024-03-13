@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #00bcb1;
+    --secondary: #ffd600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.lazy-load-image-background {
+    width: 100%;
+    height: 100%;
+}
+.lazy-load-image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.background_gradient_bt {
+    background-image: linear-gradient(180deg, #00bcaf00, #00bcb1 100%)
+}
+.background_gradient_tb {
+    background-image: linear-gradient(0deg, #00bcaf00, #00bcb1 100%)
+}
+
+/* ================================= PlayIcon ======================= */
+.playbtn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.playbtn svg {
+    width: 60px;
+}
+.centerIcon {
+    position: relative;
+}
+.centerIcon img {
+    width: 100%;
+}
+.centerIcon svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+}
+@media screen and (min-width: 768px) {
+    .playbtn svg {
+        width: 80px;
+    }
+}
+.playbtn .triangle {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: white;
+    transform: translateY(0);
+    transition: all 0.7s ease-in-out;
+}
+.playbtn .circle {
+    stroke: white;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 1300;
+    transition: all 0.5s ease-in-out;
+}
+.playbtn .text {
+    font-size: 20px;
+    transition: all 0.7s ease-in-out;
+}
+.playbtn:hover .triangle {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    stroke: var(--secondary);
+    animation: trailorPlay 0.7s ease-in-out;
+}
+.playbtn:hover .circle {
+    stroke-dashoffset: 0;
+    stroke: var(--secondary);
+}
+.playbtn:hover .text{
+    color: var(--secondary);
+}
+
+/* =============================== header ========================== */
+.logo {
+    font-family: 'Oleo Script', system-ui;
+}
+.search_input {
+    width: calc(100% - 50px);
+}
+
+
+/* ================================ hero =========================== */
+.hero_input {
+    width: calc(100% - 100px);
+}
+
+/* ============================== carousel ========================== */
+.carousel_item_width {
+    width: 125px
+}
+@media screen and (min-width: 768px) {
+    .carousel_item_width {
+        width: calc(25% - 15px);
+    }
+}
+@media screen and (min-width: 1024px) {
+    .carousel_item_width {
+        width: calc(20% - 16px);
+    }
+}
+
+.arrow_style {
+    position: absolute;
+    top: 34%;
+    width: 36px;
+    height: 36px;
+    color: black;
+    background-color: var(--secondary);
+    border: 3px solid black;
+    border-radius: 50%;
+    font-size: 10px;
+    padding: 2px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.box_style {
+    aspect-ratio: 1 / 1.5;
+}
+.lazy-load-image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.lazy-load-image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.CircularProgressbar .CircularProgressbar-text {
+    font-size: 35px;
+    font-weight: 800;
+    fill: black
+}
+
+.one_line {   
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ========================== detailsBanner ======================== */
+.info {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.674);
+    padding: 15px 0;
+    display: flex;
+    /* flex py-[15px] border-[1px] border-[white] */
+}
+.infoItem {
+    margin-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+     /* mr-[10px] flex flex-wrap */
+}
+.text {
+    margin-right: 10px;
+    opacity: 0.5;
+    line-height: 24px;
+    /* mr-[10px] opacity-[0.5] leading-[25px] */
+}
+.bold {
+    font-weight: 600;
+    opacity: 1;
+    /*  text-[600] opacity-[1] */
+}
+
+/* =============================== footer ========================== */
+.shadow-custom {
+    box-shadow: 0px 0px 50px -8px var(--secondary),0px 45px 26px 0px var(--secondary)
+}
